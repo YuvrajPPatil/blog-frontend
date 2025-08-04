@@ -1,6 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
+export const Metadata={
+  title:"Blog-app Main Page",
+  description:"Home page of the blogs"
+}
+
 export default function Home() {
   return (
      <main className="flex min-h-screen flex-col items-center justify-center px-4 py-10 text-center">

@@ -1,27 +1,28 @@
 import BlogCard from "@/components/BlogCard";
-const posts=[
-  {
-    titel:"Next.js blog app",
-    description:"Learn how to build your first Next.js app using the App Router.",
-    date:"July 25, 2025",
-  },
-  {
-    title:"understanding card layout and components",
-    description:"Master rendering strategies in Next.js",
-    date:"July 25, 2025",
-  }
-];
+import getAllBlogs from "@/lib/getAllBlogs";
+import { notFound } from "next/navigation";
 
-
-export default function BlogPage(){
+export const Metadata={
+  title:"BLog-app",
+  description:"Read the blogs"
+}
+export default function BlogListPage(){
+  const blogs= getAllBlogs();
   return(
-        <main className="min-h-screen bg-gray-100 py-10 px-4">
-          <div className="max-w-4xl mx-auto space-y-6">
-          <h1 className="text-4xl font-bold text-center mb-6">Blog</h1>
-          {posts.map((posts,idx)=>(
-            <BlogCard key={idx}{...posts} /> 
-          ))}
-          </div>
+         <main className="min-h-screen p-4">
+          <h1 className="text-3xl font-bold mb-4">Blog Post</h1>
+          <div className="grid gap-4">
+            {blogs.map((blog)=>(
+              <BlogCard 
+                key={blog.slug}
+                title={blog.title}
+                description={blog.content.slice(0,100)+ '...'}
+                date={blog.date}
+                content={blog.content}
+                slug={blog.slug}
+              /> 
+            ))} 
+          </div> 
         </main>
   );
 }

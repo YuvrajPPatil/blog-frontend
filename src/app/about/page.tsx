@@ -1,3 +1,8 @@
+export const Metadata={
+  title:"BLog-app About Page",
+  description:"About page of the blogs"
+}
+
 export default function about(){
     return(
             <div className="bg-gray-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
