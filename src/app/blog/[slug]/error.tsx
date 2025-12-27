@@ -11,7 +11,7 @@ export default function Error({error,reset}:{error:Error;reset:()=>void}){
             <h2 className="text-2xl font-bold mb-2">Something went wrong!</h2>
             <p className="mb-4">{error.message}</p>
             <button
-                onClick={reset}
+                onClick={() => reset()}
                 className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800"
             >
                 Try again

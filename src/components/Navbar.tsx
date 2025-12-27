@@ -18,8 +18,10 @@ export default function Navbar(){
                 <Link href="/blog" className="text-white hover:text-gray-400">
                     Blog
                 </Link>
+                
                 </div>
             </div>
         </nav>
     );
 }
+ 

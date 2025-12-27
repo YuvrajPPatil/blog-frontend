@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import getBlogBySlug from '@/lib/getBlogBySlug';
 import {notFound} from 'next/navigation';
 import { BlogPost } from '@/types/blog';
- import Image from 'next/image';
+import Image from 'next/image';
 
 interface PageProps {
   params: {
@@ -35,7 +35,6 @@ export default function BlogPostPage({params}: PageProps){
                     alt={post.title}
                     width={300}
                     height={200}
-                   
                     className="rounded-lg object-cover"
                     sizes="(max-width: 800px) 100vw, 800px"
                     />
